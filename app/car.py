@@ -1,12 +1,11 @@
-from dataclasses import dataclass
 from app.shop import Shop
 from app.customer import Customer
 
 
-@dataclass
 class Car:
-    brand: str
-    fuel_consumption: float
+    def __init__(self, brand: str, fuel_consumption: float) -> None:
+        self.brand = brand
+        self.fuel_consumption = fuel_consumption
 
     def calculate_price_road(self, shop: Shop, customer: Customer,
                              fuel_price: float) -> int | float:

@@ -1,14 +1,13 @@
 import datetime
-
-from dataclasses import dataclass
 from app.customer import Customer
 
 
-@dataclass
 class Shop:
-    name: str
-    location: list[int]
-    products: dict
+    def __init__(self, name: str, location: list[int],
+                 products: dict) -> None:
+        self.name = name
+        self.location = location
+        self.products = products
 
     def print_check(self, customer: Customer) -> None:
 
